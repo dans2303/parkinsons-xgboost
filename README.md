@@ -233,6 +233,10 @@ Run:
 * Expand the dataset for better generalization
 * Deploy model via **FastAPI**
 * Build a real-time inference system
+* Expand dataset for better generalization
+* Deploy model via **FastAPI**
+* Build real-time inference system
+(v1: clean project with GB + XGBoost comparison)
 
 ---
 
