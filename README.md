@@ -2,7 +2,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange.svg)](https://scikit-learn.org/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-Coming%20Soon-green.svg)](https://xgboost.readthedocs.io/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-Implemented-success.svg)](https://xgboost.readthedocs.io/)
 
 ---
 
@@ -15,7 +15,7 @@ The workflow includes:
 * Data preprocessing and cleaning
 * Class imbalance handling (SMOTETomek)
 * Feature scaling
-* Model training using **Gradient Boosting**
+* Model training using **Gradient Boosting and XGBoost**
 * Hyperparameter tuning using **GridSearchCV (cross-validation)**
 * Model evaluation using multiple performance metrics
 * Visualization of results (ROC curve, confusion matrix, feature importance)
@@ -67,6 +67,7 @@ The workflow includes:
 5. **Model Training**
 
    * Gradient Boosting Classifier
+   * XGBoost Classifier (for comparison)
 
 6. **Hyperparameter Tuning**
 
@@ -80,7 +81,7 @@ The workflow includes:
    * Recall
    * F1-score
    * ROC-AUC
-   * MCC
+   * Matthews Correlation Coefficient (MCC)
 
 ---
 
@@ -88,39 +89,70 @@ The workflow includes:
 
 ### 🔍 Best Model Parameters
 
+**Gradient Boosting**
+
 ```
 learning_rate = 0.1
 max_depth     = 4
 n_estimators  = 100
 ```
 
+**XGBoost**
+
+```
+learning_rate = 0.1
+max_depth     = 4
+n_estimators  = 100
+```
+
+---
+
 ### 📊 Cross-Validation Performance
 
-* ROC-AUC (CV): **0.9886**
+* Gradient Boosting ROC-AUC (CV): **0.9886**
 
-### 📊 Test Performance
+---
 
-| Metric    | Score  |
-| --------- | ------ |
-| Accuracy  | 0.9565 |
-| Precision | 0.9737 |
-| Recall    | 0.9737 |
-| F1-score  | 0.9737 |
-| ROC-AUC   | 0.9868 |
-| MCC       | 0.8487 |
+### 📊 Test Performance Comparison
+
+| Model             | Accuracy | ROC-AUC | MCC    |
+| ----------------- | -------- | ------- | ------ |
+| Gradient Boosting | 0.9565   | 0.9868  | 0.8487 |
+| XGBoost           | 0.9783   | 0.9704  | 0.9233 |
+
+---
 
 ### 🔢 Confusion Matrix
+
+**Gradient Boosting**
 
 ```
 [[ 7  1]
  [ 1 37]]
 ```
 
+**XGBoost**
+
+```
+[[ 7  1]
+ [ 0 38]]
+```
+
+---
+
+### 🧠 Interpretation
+
+XGBoost achieved higher accuracy and MCC, indicating stronger classification performance and better handling of class imbalance.
+
+Gradient Boosting achieved slightly higher ROC-AUC, suggesting better probability separation between classes.
+
+This demonstrates a trade-off between classification accuracy and probabilistic discrimination, highlighting the importance of evaluating multiple metrics for imbalanced datasets.
+
 ---
 
 ## 📊 Visualizations
 
-The project includes:
+The project includes visualization for both models:
 
 * Confusion Matrix
 * ROC Curve
@@ -196,11 +228,11 @@ Run:
 
 ## 🚀 Future Work
 
-* Add **XGBoost model comparison**
-* Integrate **FastAI CNN (spectrogram-based)**
-* Expand dataset for better generalization
+* Compare additional models (e.g., Random Forest, LightGBM)
+* Integrate **FastAI CNN (spectrogram-based approach)**
+* Expand the dataset for better generalization
 * Deploy model via **FastAPI**
-* Real-time inference system
+* Build a real-time inference system
 
 ---
 
@@ -208,8 +240,9 @@ Run:
 
 * Proper class imbalance handling is critical
 * Cross-validation improves reliability
-* ROC-AUC and MCC are better for imbalanced data
-* Voice biomarkers are promising for PD detection
+* ROC-AUC and MCC are essential for imbalanced datasets
+* Ensemble models (GB & XGBoost) perform strongly on tabular biomedical data
+* Voice biomarkers show strong potential for non-invasive PD detection
 
 ---
 
