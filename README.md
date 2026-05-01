@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project focuses on **early detection of Parkinson’s Disease (PD)** using voice-based biomedical features and machine learning models.
 
@@ -22,7 +22,7 @@ The workflow includes:
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 ### 1. Public Dataset
 
@@ -36,7 +36,7 @@ The workflow includes:
 * IRB Approval: **TMU-JIRB Protocol No. N201801043**
 * ❗ Not publicly available due to privacy restrictions
 
-### 🎯 Target Variable
+### Target Variable
 
 * `status`
 
@@ -45,7 +45,7 @@ The workflow includes:
 
 ---
 
-## ⚙️ Machine Learning Pipeline
+## Machine Learning Pipeline
 
 1. **Data Cleaning**
 
@@ -85,9 +85,9 @@ The workflow includes:
 
 ---
 
-## 📈 Results
+## Results
 
-### 🔍 Best Model Parameters
+### Best Model Parameters
 
 **Gradient Boosting**
 
@@ -107,13 +107,13 @@ n_estimators  = 100
 
 ---
 
-### 📊 Cross-Validation Performance
+### Cross-Validation Performance
 
 * Gradient Boosting ROC-AUC (CV): **0.9886**
 
 ---
 
-### 📊 Test Performance Comparison
+### Test Performance Comparison
 
 | Model             | Accuracy | ROC-AUC | MCC    |
 | ----------------- | -------- | ------- | ------ |
@@ -122,7 +122,7 @@ n_estimators  = 100
 
 ---
 
-### 🔢 Confusion Matrix
+### Confusion Matrix
 
 **Gradient Boosting**
 
@@ -140,7 +140,7 @@ n_estimators  = 100
 
 ---
 
-### 🧠 Interpretation
+### Interpretation
 
 XGBoost achieved higher accuracy and MCC, indicating stronger classification performance and better handling of class imbalance.
 
@@ -150,7 +150,7 @@ This demonstrates a trade-off between classification accuracy and probabilistic 
 
 ---
 
-## 📊 Visualizations
+## Visualizations
 
 The project includes visualization for both models:
 
@@ -167,7 +167,7 @@ src/visualizer.py
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 parkinsons-xgboost/
@@ -191,7 +191,7 @@ parkinsons-xgboost/
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 ### 1. Clone repository
 
@@ -226,7 +226,7 @@ Run:
 
 ---
 
-## 🚀 Future Work
+## Future Work
 
 * Compare additional models (e.g., Random Forest, LightGBM)
 * Integrate **FastAI CNN (spectrogram-based approach)**
@@ -240,7 +240,7 @@ Run:
 
 ---
 
-## 📌 Key Takeaways
+## Key Takeaways
 
 * Proper class imbalance handling is critical
 * Cross-validation improves reliability
@@ -250,7 +250,7 @@ Run:
 
 ---
 
-## 📬 Contact
+## Contact
 
 * Email: [mirnadanisat@gmail.com](mailto:mirnadanisat@gmail.com)
 * LinkedIn: https://www.linkedin.com/in/mirnadanisatandjung/
